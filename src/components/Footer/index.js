@@ -1,5 +1,5 @@
 import React from 'react';
-import { FooterBase, FooterImg } from './styles';
+import { FooterBase } from './styles';
 import Logo from '../../assets/img/Logo.png';
 
 function Footer() {
