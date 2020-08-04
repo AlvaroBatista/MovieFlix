@@ -29,8 +29,10 @@ function CadastroCategoria() {
 
   useEffect(() => {
     if (window.location.href.includes('localhost')) {
-      const URL = 'http://localhost:8080/categorias';
-      fetch(URL)
+      const URL_TOP = window.location.hostname.includes('localhost')
+        ? 'http://localhost:8080/categorias'
+        : 'https://devmovieflix.herokuapp.com/categorias';
+      fetch(URL_TOP)
         .then(async (respostaDoServer) => {
           if (respostaDoServer.ok) {
             const resposta = await respostaDoServer.json();
@@ -71,7 +73,7 @@ function CadastroCategoria() {
 
         <FormField
           label="Descrição:"
-          type="????"
+          type="textarea"
           name="descricao"
           value={values.descricao}
           onChange={handleChange}
